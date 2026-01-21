@@ -3,15 +3,15 @@ import 'dart:math';
 
 void main() {
   stdout.write('Pilih Batu,Gunting,atau Kertas: ');
-  String? userInput = stdin.readLineSync();
-  List<String> choices = ['Batu', 'Gunting', 'Kertas'];
-  String compChoice = choices[Random().nextInt(3)];
-  print("User choice: $userInput, Computer choice: $compChoice");
-  if (userInput == compChoice) {
+  String? user = stdin.readLineSync();
+  List<String> pilihan = ['Batu', 'Gunting', 'Kertas'];
+  String comp = pilihan[Random().nextInt(3)];
+  print("User: $user, Computer: $comp");
+  if (user == comp) {
     print("Seri");
-  } else if ((userInput == 'Batu' && compChoice == 'Gunting') ||
-      (userInput == 'Gunting' && compChoice == 'Kertas') ||
-      (userInput == 'Kertas' && compChoice == 'Batu')) {
+  } else if ((user == 'Batu' && comp == 'Gunting') ||
+      (user == 'Gunting' && comp == 'Kertas') ||
+      (user == 'Kertas' && comp== 'Batu')) {
     print("Kamu Menang");
   } else {
     print("Kamu Kalah");
