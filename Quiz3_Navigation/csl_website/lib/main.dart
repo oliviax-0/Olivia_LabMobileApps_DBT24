@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 alignment: Alignment.center,
                 child: Image.network(
                   'https://www.prasetiyamulya.ac.id/wp-content/uploads/2020/01/Logo-Universitas-Prasetiya-Mulya.png',
-                  height: 150,
+                  height: 140,
                   width: double.infinity,
                   fit: BoxFit.contain,
                 ),
@@ -243,45 +243,48 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 500),
+              const SizedBox(height: 400),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.only(top: 16, bottom: 16),
                 color: Colors.black,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.network(
-                      'https://www.prasetiyamulya.ac.id/wp-content/uploads/2020/01/Logo-Universitas-Prasetiya-Mulya.png',
-                      height: 40,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'BSD City Kavling Edutown I.1',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                    const SizedBox(height: 6),
-                    const Text(
-                      'Jl. BSD Raya Utama, BSD City 15339',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                    const SizedBox(height: 6),
-                    const Text(
-                      'Kabupaten Tangerang, Indonesia',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                    const SizedBox(height: 6),
-                    const Text(
-                      'Tel. (021) 304-50-500',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                    const SizedBox(height: 6),
-                    const Text(
-                      'info@prasetiyamulya.ac.id',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:36,vertical: 40),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.network(
+                        'https://www.prasetiyamulya.ac.id/wp-content/uploads/2020/01/Logo-Universitas-Prasetiya-Mulya.png',
+                        height: 60,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(height: 12),
+                      const Text(
+                        'BSD City Kavling Edutown I.1',
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                      const SizedBox(height: 6),
+                      const Text(
+                        'Jl. BSD Raya Utama, BSD City 15339',
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                      const SizedBox(height: 6),
+                      const Text(
+                        'Kabupaten Tangerang, Indonesia',
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                      const SizedBox(height: 6),
+                      const Text(
+                        'Tel. (021) 304-50-500',
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                      const SizedBox(height: 6),
+                      const Text(
+                        'info@prasetiyamulya.ac.id',
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
