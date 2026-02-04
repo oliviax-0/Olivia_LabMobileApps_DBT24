@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,6 +25,126 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  void _showInfo(String label) {
+    showDialog(
+      context: context,
+      builder: (dCtx) => AlertDialog(
+        title: const Text('Informasi'),
+        content: Text('$label clicked'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dCtx).pop(),
+            child: const Text('OK', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showMenuBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (ctx) {
+        return SafeArea(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: FractionallySizedBox(
+              heightFactor: 0.4,
+              widthFactor: 1,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color(0xFF212121),
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                ),
+                child: ListView(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 24,
+                    horizontal: 24,
+                  ),
+                  children: [
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'PROGRAMS',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        _showInfo('PROGRAMS');
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'ADMISSION',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        _showInfo('ADMISSION');
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'PEOPLE',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        _showInfo('PEOPLE');
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'LABORATORY',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        _showInfo('LABORATORY');
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'CAMPUS LIFE',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        _showInfo('CAMPUS LIFE');
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'OFFICE & SERVICES',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        _showInfo('OFFICE & SERVICES');
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,13 +158,15 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.menu, color: Colors.black),
-            onPressed: () {},
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              _showMenuBottomSheet(context);
+            },
           ),
         ],
       ),
       body: Container(
-        padding: const EdgeInsets.all(4.0),
+        padding: const EdgeInsets.only(top: 4.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 500),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.only(top: 16, bottom: 16),
                 color: Colors.black,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
