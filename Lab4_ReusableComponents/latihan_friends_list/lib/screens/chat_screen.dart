@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:latihan_friends_list/data/mock_data.dart';
+import 'package:latihan_friends_list/models/message_model.dart';
 import 'package:latihan_friends_list/models/user_model.dart';
 import 'package:latihan_friends_list/widgets/chat_bubble.dart';
 
 class ChatScreen extends StatefulWidget {
   final User user;
 
-  const ChatScreen({Key? key, required this.user}) : super(key: key);
+  const ChatScreen({super.key, required this.user});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  _buildMessageComposer() {
+  Container _buildMessageComposer() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       height: 70.0,
@@ -62,6 +64,28 @@ class _ChatScreenState extends State<ChatScreen> {
               itemCount: allMessages[widget.user.id]!.length,
               itemBuilder: (BuildContext context, int index) {
                 final message = allMessages[widget.user.id]![index];
+                final bool isSameDay =
+                    index > 0 &&
+                    allMessages[widget.user.id]![index - 1].time.day ==
+                        message.time.day;
+
+                if (index == 0 || !isSameDay) {
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          DateFormat.yMMMMd().format(message.time),
+                          style: const TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      ChatBubble(message: message),
+                    ],
+                  );
+                }
                 return ChatBubble(message: message);
               },
             ),

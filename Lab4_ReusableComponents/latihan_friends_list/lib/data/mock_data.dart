@@ -55,51 +55,129 @@ final List<User> friendsData = [
 
 // Dummy Chat History for a specific user
 final List<Message> mockMessages = [
-  Message(text: 'Halo, Olivia.', isMe: true, time: '9:30 AM'),
-  Message(text: 'Are you available to work?', isMe: true, time: '9:31 AM'),
+  Message(
+    text: 'Halo, Olivia.',
+    isMe: true,
+    time: DateTime.now().subtract(const Duration(minutes: 10)),
+  ),
+  Message(
+    text: 'Are you available to work?',
+    isMe: true,
+    time: DateTime.now().subtract(const Duration(minutes: 9)),
+  ),
   Message(
     text: 'If you are interested, let me know.',
     isMe: true,
-    time: '9:31 AM',
+    time: DateTime.now().subtract(const Duration(minutes: 9)),
   ),
   Message(
     text: "Hey, I'm open for work, plz share me further details.",
     isMe: false,
-    time: '9:35 AM',
+    time: DateTime.now().subtract(const Duration(minutes: 5)),
   ),
-  Message(text: "Sure I'll share you.", isMe: true, time: '9:36 AM'),
-  Message(text: 'www.dribbble.com/fbdjbj/df', isMe: true, time: '9:36 AM'),
-  Message(text: 'Hey i have shared you the link.', isMe: true, time: '9:37 AM'),
-  Message(text: 'Ok, sipp...', isMe: false, time: '9:40 AM'),
+  Message(
+    text: "Sure I'll share you.",
+    isMe: true,
+    time: DateTime.now().subtract(const Duration(minutes: 4)),
+  ),
+  Message(
+    text: 'www.dribbble.com/fbdjbj/df',
+    isMe: true,
+    time: DateTime.now().subtract(const Duration(minutes: 4)),
+  ),
+  Message(
+    text: 'Hey i have shared you the link.',
+    isMe: true,
+    time: DateTime.now().subtract(const Duration(minutes: 3)),
+  ),
+  Message(text: 'Ok, sipp...', isMe: false, time: DateTime.now()),
 ];
 
 final Map<int, List<Message>> allMessages = {
   1: mockMessages,
   2: [
-    Message(text: 'Hi Grace, how are you?', isMe: true, time: '8:00 PM'),
-    Message(text: 'I am good, how about you?', isMe: false, time: '8:01 PM'),
-    Message(text: 'I am doing great!', isMe: true, time: '8:02 PM'),
-    Message(text: 'See you tomorrow', isMe: false, time: '8:10 PM'),
+    Message(
+      text: 'Hi Grace, how are you?',
+      isMe: true,
+      time: DateTime.now().subtract(const Duration(days: 1, hours: 2)),
+    ),
+    Message(
+      text: 'I am good, how about you?',
+      isMe: false,
+      time: DateTime.now().subtract(
+        const Duration(days: 1, hours: 1, minutes: 59),
+      ),
+    ),
+    Message(
+      text: 'I am doing great!',
+      isMe: true,
+      time: DateTime.now().subtract(
+        const Duration(days: 1, hours: 1, minutes: 58),
+      ),
+    ),
+    Message(
+      text: 'See you tomorrow',
+      isMe: false,
+      time: DateTime.now().subtract(const Duration(days: 1)),
+    ),
   ],
   3: [
-    Message(text: 'Hi Chessa', isMe: true, time: 'Mon 1:00 PM'),
-    Message(text: 'Hello', isMe: false, time: 'Mon 1:01 PM'),
-    Message(text: 'Ok', isMe: true, time: 'Mon 1:02 PM'),
+    Message(
+      text: 'Hi Chessa',
+      isMe: true,
+      time: DateTime.now().subtract(const Duration(days: 2, hours: 5)),
+    ),
+    Message(
+      text: 'Hello',
+      isMe: false,
+      time: DateTime.now().subtract(
+        const Duration(days: 2, hours: 5, minutes: 1),
+      ),
+    ),
+    Message(
+      text: 'Ok',
+      isMe: true,
+      time: DateTime.now().subtract(
+        const Duration(days: 2, hours: 5, minutes: 2),
+      ),
+    ),
   ],
   4: [
-    Message(text: 'Woi', isMe: false, time: '7:20 PM'),
-    Message(text: 'Woi udah kerjain ya', isMe: true, time: '7:25 PM'),
+    Message(
+      text: 'Woi',
+      isMe: false,
+      time: DateTime.now().subtract(const Duration(days: 3, minutes: 5)),
+    ),
+    Message(
+      text: 'Woi udah kerjain ya',
+      isMe: true,
+      time: DateTime.now().subtract(const Duration(days: 3)),
+    ),
   ],
   5: [
-    Message(text: 'Bro', isMe: true, time: 'Yesterday 3:00 PM'),
+    Message(
+      text: 'Bro',
+      isMe: true,
+      time: DateTime.now().subtract(const Duration(days: 4, hours: 10)),
+    ),
     Message(
       text: 'Temannya AI & Automation',
       isMe: false,
-      time: 'Yesterday 3:05 PM',
+      time: DateTime.now().subtract(
+        const Duration(days: 4, hours: 10, minutes: 5),
+      ),
     ),
   ],
   6: [
-    Message(text: 'Bro, makasih ya', isMe: true, time: '10:10 AM'),
-    Message(text: 'Makasih brok', isMe: false, time: '10:15 AM'),
+    Message(
+      text: 'Bro, makasih ya',
+      isMe: true,
+      time: DateTime.now().subtract(const Duration(days: 5, minutes: 5)),
+    ),
+    Message(
+      text: 'Makasih brok',
+      isMe: false,
+      time: DateTime.now().subtract(const Duration(days: 5)),
+    ),
   ],
 };

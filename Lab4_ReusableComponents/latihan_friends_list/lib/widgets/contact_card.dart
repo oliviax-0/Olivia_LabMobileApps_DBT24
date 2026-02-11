@@ -5,7 +5,7 @@ import 'package:latihan_friends_list/screens/chat_screen.dart';
 class ContactCard extends StatelessWidget {
   final User user;
 
-  const ContactCard({Key? key, required this.user}) : super(key: key);
+  const ContactCard({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {

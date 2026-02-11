@@ -3,7 +3,7 @@ import 'package:latihan_friends_list/data/mock_data.dart';
 import 'package:latihan_friends_list/widgets/contact_card.dart';
 
 class ContactsScreen extends StatelessWidget {
-  const ContactsScreen({Key? key}) : super(key: key);
+  const ContactsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
