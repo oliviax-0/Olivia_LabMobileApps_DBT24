@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagramapp/model/user_model.dart';
+import 'package:instagramapp/model/story_model.dart';
 
 class StoryAvatar extends StatelessWidget {
   const StoryAvatar({super.key, required this.story});

@@ -1,4 +1,9 @@
 import 'package:instagramapp/model/user_model.dart';
+import 'package:instagramapp/model/story_model.dart';
+import 'package:instagramapp/model/post_model.dart';
+import 'package:instagramapp/model/message_model.dart';
+import 'package:instagramapp/model/direct_message_model.dart';
+import 'package:instagramapp/model/conversation_model.dart';
 
 const UserModel currentUser = UserModel(
   username: 'your_story',

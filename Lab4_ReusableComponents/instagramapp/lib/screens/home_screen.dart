@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagramapp/data/mock_data.dart';
-import 'package:instagramapp/widgets/app_bottom_nav.dart';
 import 'package:instagramapp/widgets/post_card.dart';
 import 'package:instagramapp/widgets/story_avatar.dart';
 

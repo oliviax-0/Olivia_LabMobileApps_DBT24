@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagramapp/widgets/app_bottom_nav.dart';
 import 'package:instagramapp/widgets/login_card.dart';
 import 'package:instagramapp/screens/main_screen.dart';
 

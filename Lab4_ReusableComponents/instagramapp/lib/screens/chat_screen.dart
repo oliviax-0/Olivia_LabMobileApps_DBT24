@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagramapp/data/mock_data.dart' as mock;
+import 'package:instagramapp/model/conversation_model.dart';
 import 'package:instagramapp/model/user_model.dart';
+import 'package:instagramapp/model/direct_message_model.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key, required this.conversation});

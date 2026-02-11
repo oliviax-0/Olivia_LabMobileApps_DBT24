@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagramapp/model/user_model.dart';
+import 'package:instagramapp/model/post_model.dart';
 
 class PostCard extends StatefulWidget {
   const PostCard({super.key, required this.post});

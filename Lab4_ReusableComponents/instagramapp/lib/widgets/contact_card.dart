@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagramapp/model/user_model.dart';
+import 'package:instagramapp/model/message_model.dart';
 import 'package:instagramapp/screens/chat_screen.dart';
 import 'package:instagramapp/data/mock_data.dart';
 
