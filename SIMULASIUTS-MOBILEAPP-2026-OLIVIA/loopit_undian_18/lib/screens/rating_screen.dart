@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:loopit_undian_18/models/rating_model.dart';
+import 'package:loopit_undian_18/screens/proof_of_delivery_screen.dart';
+import 'package:loopit_undian_18/screens/review_success_screen.dart';
 
 class RatingScreen extends StatefulWidget {
   const RatingScreen({super.key});
@@ -246,19 +248,31 @@ class _RatingScreenState extends State<RatingScreen> {
             ),
             const SizedBox(height: 12),
 
-            // Proof of Transaction
-            _buildInfoRow(
+            InkWell(
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ProofOfDeliveryScreen(
+          proofImageUrl: null, // You can pass actual image URL here
+        ),
+      ),
+    );
+  },
+  // Proof of Transaction
+          child: _buildInfoRow(
               "",
               "Proof of transaction",
-              icon: const Icon(
-                Icons.insert_drive_file_outlined,
-                color: darkGreenText,
-                size: 24,
-              ),
+                          icon: const Icon(
+                            Icons.insert_drive_file_outlined,
+                            color: darkGreenText,
+                            size: 24,
+                          ),
+                        ),
             ),
-            const SizedBox(height: 12),
-
-            // Order Number
+                        const SizedBox(height: 12),
+            
+                        // Order Number
             _buildInfoRow("Order Number", "00000001"),
 
             const SizedBox(height: 24),
@@ -298,7 +312,7 @@ class _RatingScreenState extends State<RatingScreen> {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (_rating == 0) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
@@ -318,8 +332,17 @@ class _RatingScreenState extends State<RatingScreen> {
                     comment: _commentController.text,
                     timestamp: DateTime.now(),
                   );
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ThankYouScreen(),
+                    ),
+                  );
 
-                  Navigator.pop(context, ratingData);
+                  // Return rating data to Order Detail screen
+                  if (mounted) {
+                    Navigator.pop(context, ratingData);
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: lightGreenTheme,
